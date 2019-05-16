@@ -1,20 +1,183 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container">
+  <br />
+  <h1>Pipes</h1>
+  <hr />
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">N°</th>
+        <th scope="col">Variable</th>
+        <th scope="col">Pipe</th>
+        <th scope="col">Product</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>{{ name }}</td>
+        <td>uppercase</td>
+        <td>{{ name | uppercase }}</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>{{ name }}</td>
+        <td>lowercase</td>
+        <td>{{ name | lowercase }}</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>{{ name }}</td>
+        <td>slice: 3</td>
+        <td>{{ name | slice: 3 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>{{ name }}</td>
+        <td>slice: 0:3</td>
+        <td>{{ name | slice: 0:3 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>{{ arr }}</td>
+        <td>slice: 1:5</td>
+        <td>{{ arr | slice: 1:5 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">6</th>
+        <td>{{ PI }}</td>
+        <td>number: '1.0-0'</td>
+        <td>{{ PI | number: '1.0-0' }}</td>
+      </tr>
+      <tr>
+        <th scope="row">7</th>
+        <td>{{ PI }}</td>
+        <td>number: '1.0-4'</td>
+        <td>{{ PI | number: '1.0-4' }}</td>
+      </tr>
+      <tr>
+        <th scope="row">8</th>
+        <td>{{ a }}</td>
+        <td>percent</td>
+        <td>{{ a | percent }}</td>
+      </tr>
+      <tr>
+        <th scope="row">8</th>
+        <td>{{ a }}</td>
+        <td>percent: '2.2-4'</td>
+        <td>{{ a | percent: '2.2-4' }}</td>
+      </tr>
+      <tr>
+        <th scope="row">9</th>
+        <td>{{ salario }}</td>
+        <td>currency</td>
+        <td>{{ salario | currency }}</td>
+      </tr>
+      <tr>
+        <th scope="row">10</th>
+        <td>{{ salario }}</td>
+        <td>currency: 'CNY'</td>
+        <td>{{ salario | currency: 'CNY' }}</td>
+      </tr>
+      <tr>
+        <th scope="row">11</th>
+        <td>{{ salario }}</td>
+        <td>currency: 'EUR':'symbol'</td>
+        <td>{{ salario | currency: 'EUR':'symbol' }}</td>
+      </tr>
+      <tr>
+        <th scope="row">11</th>
+        <td>{{ salario }}</td>
+        <td>currency: 'EUR':'symbol':'1.0-0'</td>
+        <td>{{ salario | currency: 'EUR':'symbol':'1.0-0' }}</td>
+      </tr>
+      <tr>
+        <th scope="row">11</th>
+        <td>{{ valueOfPromise }}</td>
+        <td>async</td>
+        <td>{{ valueOfPromise | async }}</td>
+      </tr>
+      <tr>
+        <th scope="row">11</th>
+        <td>{{ date }}</td>
+        <td>date</td>
+        <td>{{ date | date }}</td>
+      </tr>
+      <tr>
+        <th scope="row">11</th>
+        <td>{{ date }}</td>
+        <td>date: 'medium'</td>
+        <td>{{ date | date: 'medium' }}</td>
+      </tr>
+      <tr>
+        <th scope="row">11</th>
+        <td>{{ date }}</td>
+        <td>date: 'dd - MMMM - y'</td>
+        <td>{{ date | date: 'dd - MMMM - y' }}</td>
+      </tr>
+      <tr>
+        <th scope="row">1</th>
+        <td>{{ lastName }}</td>
+        <td>capitalizado</td>
+        <td>{{ lastName | capitalizado }}</td>
+      </tr>
+      <tr>
+        <th scope="row">1</th>
+        <td>{{ lastName }}</td>
+        <td>capitalizado: false</td>
+        <td>{{ lastName | capitalizado: false }}</td>
+      </tr>
+      <tr>
+        <th scope="row">1</th>
+        <td>{{ name }}</td>
+        <td>password: {{ showPassword }}</td>
+        <td>{{ name | password: showPassword }}</td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <button
+            (click)="showPassword = !showPassword"
+            class="btn btn-outline-{{ color() }}"
+          >
+            {{ status() }}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <hr />
 
+  <h4>Slice</h4>
+  <table>
+    <ul>
+      <li *ngFor="let item of arr | slice: 5:20">{{ item }}</li>
+    </ul>
+  </table>
+  <hr />
+
+  <h4>Json</h4>
+  <pre>
+    {{ heroe | json }}
+  </pre>
+  <hr />
+
+  <h4>Game of thrones - Video</h4>
+  <iframe
+    width="560"
+    height="315"
+    [src]="'https://www.youtube-nocookie.com/embed/34r_0xd1OSw' | domsecurity"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+  <hr />
+
+  <h4>Jocker - Video</h4>
+  <iframe
+    width="560"
+    height="315"
+    [src]="paramVideo | domseguro: 'https://www.youtube-nocookie.com/embed/'"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
